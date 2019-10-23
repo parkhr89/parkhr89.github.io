@@ -1,0 +1,22 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+@mixin body-font {
+  font-family: calibri, 나눔고딕, 돋움;
+  font-size: 10pt;
+}
+
+body {
+  @include body-font;
+}
+
+a .custom-a {
+  text-decoration: none;
+}
+
+a .custom-a:hover {
+  color: blue;
+  text-decoration: underline;
+}

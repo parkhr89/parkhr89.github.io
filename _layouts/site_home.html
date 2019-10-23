@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<section>
+  {{ content }}
+</section>
+
+<hr>
+
+<div>
+  {%- if site.posts.size > 0 -%}
+    <center>
+      <p class="h4">최근 포스트</p>
+    </center>
+
+    <ul class="list-unstyled">
+      {%- for post in site.posts -%}
+      <li>
+        <span class="text-muted">
+          {%- assign date_format = "%Y년 %m월 %d일" -%}
+          {{ post.date | date: date_format }}
+        </span>
+        <p class="h5">
+          <a href="{{ post.url | relative_url }}">
+            {{ post.title | escape }}
+          </a>
+        </p>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>

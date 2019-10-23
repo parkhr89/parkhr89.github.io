@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div>
+  <section>
+    {{ content }}
+  </section>
+
+  <hr>
+
+  {%- if site.posts.size > 0 -%}
+    <p class="h5" style='text-align: center'>
+      최근 포스트
+    </p>
+
+    <ul class="list-unstyled">
+      {%- for post in site.posts -%}
+      <li>
+        <span class="text-muted">
+          {%- assign date_format = "%Y년 %m월 %d일" -%}
+          {{ post.date | date: date_format }}
+        </span>
+        <p class="h5">
+          <a href="{{ post.url | relative_url }}">
+            [{{ post.categories }}] {{ post.title | escape }}
+          </a>
+        </p>
+        {%- if site.show_excerpts -%}
+          {{ post.excerpt }}
+        {%- endif -%}
+      </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
+</div>

@@ -1,0 +1,40 @@
+
+<div class="py-5 border-top">
+  <div class="container">
+
+    <p class="mb-3">{{ site.title | escape }}</p>
+
+    <div class="row">
+
+      <div class="col-sm">
+        <ul class="list-unstyled">
+          <li style="font-size: 10pt">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+          </li>
+          {%- if site.email -%}
+            <li style="font-size: 10pt">
+              <a href="mailto:{{ site.email }}">
+                {{ site.email }}
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+
+      <div class="col-sm text-right">
+        <p>{{- site.description | escape -}}</p>
+
+        <p style="font-size: 6pt">
+          <a href="https://nicolas-van.github.io/bootstrap-4-github-pages/">Powered by Bootstrap 4 Github Pages</a>
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
